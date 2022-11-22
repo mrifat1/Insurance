@@ -7,8 +7,6 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import {data} from './data';
-import Insurances from '@app/components/Insurances';
 import DummyImage from '@app/assets/images/DummyImage.svg';
 import AppButton from '../AppButton';
 import FontSize from '@app/config/theme/FontSize';
@@ -19,7 +17,7 @@ type props = {
 
 const ConsultationList = ({style}: props) => {
   return (
-    <View style={[styles.container, Shadow.shadow, style]}>
+    <TouchableOpacity style={[styles.container, Shadow.shadow, style]}>
       <View
         style={{
           width: wp(50),
@@ -40,7 +38,7 @@ const ConsultationList = ({style}: props) => {
         />
       </View>
       <DummyImage />
-    </View>
+    </TouchableOpacity>
   );
 };
 

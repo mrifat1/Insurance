@@ -1,14 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import Colors from '@app/config/theme/Colors';
 import {Shadow} from '@app/config/theme/shadow';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import {data} from './data';
 import FontSize from '@app/config/theme/FontSize';
+import InsuranceDetailsCard from '@app/components/InsuranceDetailsCard';
+import {insuranceData} from '../Data';
 
 const InsuranceDetails = () => {
   return (
@@ -20,6 +27,8 @@ const InsuranceDetails = () => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: wp(90),
+          alignSelf: 'center',
+          marginVertical: hp(1.5),
         }}>
         <View
           style={{
@@ -37,6 +46,19 @@ const InsuranceDetails = () => {
           </Text>
         </TouchableOpacity>
       </View>
+      <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+        {insuranceData?.map((item, index) => {
+          return (
+            <InsuranceDetailsCard
+              length={insuranceData?.length}
+              index={index}
+              coverage={item?.coverage}
+              term={item?.term}
+              premium={item?.Premium}
+            />
+          );
+        })}
+      </ScrollView>
     </View>
   );
 };
@@ -45,13 +67,13 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: hp(1.5),
     backgroundColor: Colors.light4,
-    minHeight: hp(17),
+    minHeight: hp(20),
     width: wp(100),
-    paddingHorizontal: wp(2),
-    paddingVertical: hp(1),
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    flexWrap: 'wrap',
+    // paddingHorizontal: wp(2),
+    // paddingVertical: hp(1),
+    // flexDirection: 'row',
+    // justifyContent: 'space-evenly',
+    // flexWrap: 'wrap',
   },
 });
 export default InsuranceDetails;
