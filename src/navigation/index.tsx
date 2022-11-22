@@ -11,6 +11,7 @@ import {
 import ProfileIcon from '@app/assets/images/ProfileIcon.svg';
 import MenuIcon from '@app/assets/images/MenuIcon.svg';
 import AppTextinputWithIcons from '@app/components/AppInput';
+import Colors from '@app/config/theme/Colors';
 // import {RootStackParamList} from '../../types';
 // import ChangePasswordScreen from '@app/screens/ForgotPassword/ChangePassword';
 // import RegisterScreen from '@app/screens/RegisterScreen/RegisterScreen';
@@ -54,7 +55,7 @@ function GenericAppBar({isSearchBar = false}: props) {
   return (
     <View
       style={{
-        backgroundColor: '#512da8',
+        backgroundColor: Colors.primaryMain,
         alignSelf: 'center',
         width: wp(100),
         minHeight: hp(6),
@@ -72,6 +73,7 @@ function GenericAppBar({isSearchBar = false}: props) {
           flexDirection: 'row',
           paddingHorizontal: wp(2),
           paddingVertical: hp(1),
+          marginBottom: hp(1),
         }}>
         {/* <Text>Hello</Text> */}
         <ProfileIcon />

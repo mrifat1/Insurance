@@ -10,6 +10,13 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import AppButton from '@app/components/AppButton';
 import Colors from '@app/config/theme/Colors';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
+import InsuranceList from '@app/components/InsuranceList';
+import ConsultationList from '@app/components/ConsultationList';
+import InsuranceDetails from '@app/components/InsuranceDetails';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -17,8 +24,9 @@ import Colors from '@app/config/theme/Colors';
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello</Text>
-      <AppButton title={'hello'} />
+      <InsuranceList />
+      <ConsultationList />
+      <InsuranceDetails />
     </View>
   );
 };
@@ -27,6 +35,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.light3,
+    alignItems: 'center',
+    // paddingHorizontal:
   },
   sectionContainer: {
     marginTop: 32,

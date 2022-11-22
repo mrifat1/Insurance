@@ -8,7 +8,7 @@ const Colors = {
   lightGray1: '#d4d4d4',
 
   primaryDarker: '#05a660',
-  primaryMain: '#37D988',
+  primaryMain: '#512da8',
   primaryLighter: '#6bba62',
   primarySubtle: '#93bfb3',
   primary10Percent: '#32885e',
@@ -19,6 +19,8 @@ const Colors = {
   light2: '#f2f2f5',
   light3: '#F5F9FD',
   light4: '#ffffff',
+
+  black: '#000',
 
   red0: '#e53535',
   red1: '#F23D3D',

@@ -1,3 +1,4 @@
+import Colors from '@app/config/theme/Colors';
 import React from 'react';
 import {
   TouchableOpacity,
@@ -26,13 +27,13 @@ interface AppButtonProp {
   isDisable?: boolean;
 }
 
-const AppButton: React.FC<AppButtonProp> = ({
+const AppButton = ({
   title,
   textStyle,
   style,
   onPress,
   isDisable = false,
-}) => {
+}: AppButtonProp) => {
   return (
     <TouchableOpacity
       disabled={isDisable}
@@ -47,7 +48,7 @@ const AppButton: React.FC<AppButtonProp> = ({
 
 const styles = StyleSheet.create({
   buttonText: {
-    color: '#ffffff',
+    color: Colors.light4,
     // fontFamily: FontFamily.InnerM,
     // fontSize: FontSize.M,
   },
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     width: wp(90),
     height: hp(6),
     borderRadius: hp(0.5),
-    backgroundColor: '#1a237e',
+    backgroundColor: Colors.primaryMain,
   },
   // customHomeButton: {
   //   // justifyContent: 'space-around',

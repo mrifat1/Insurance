@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   View,
@@ -15,7 +16,7 @@ import SearchIcon from '@app/assets/images/SearchIcon.svg';
 type AppTextinputWithIconsProps = {
   sendLoading?: boolean;
   onPressSend?: () => void;
-  ref?: React.ForwardedRef<null>;
+  //   ref?: React.ForwardedRef<null>;
   onPressAttachment?: () => void;
   containerStyle?: ViewStyle;
   iconRight?: boolean;
@@ -29,19 +30,13 @@ type AppTextinputWithIconsProps = {
 };
 
 const AppTextinputWithIcons = ({
-  sendLoading,
-  onPressSend,
-  onPressAttachment,
   containerStyle,
   iconLeft = false,
   iconRight = false,
   placeholder = 'Your text',
-  ref,
   dataText,
   setText,
   isEditable = true,
-  iconSentStyle,
-  rightIconName = 'send',
   ...Props
 }: AppTextinputWithIconsProps) => {
   return (
@@ -60,7 +55,6 @@ const AppTextinputWithIcons = ({
         }}>
         <TextInput
           editable={isEditable}
-          ref={ref}
           style={styles.inputText}
           onChangeText={setText}
           value={dataText}
