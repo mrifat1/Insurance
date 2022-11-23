@@ -10,6 +10,7 @@ import {
 import FontSize from '@app/config/theme/FontSize';
 import InsuranceLogo from '@app/assets/images/InsuranceLogo.svg';
 import Basket from '@app/assets/images/Basket.svg';
+import {useNavigation} from '@react-navigation/native';
 
 type props = {
   coverage?: number;
@@ -17,30 +18,28 @@ type props = {
   premium?: number;
   index?: number;
   length?: number;
-  onPress?: any;
-  title?: string;
+  item?: any;
 };
 
-const InsuranceDetailsCard = ({
+const InsuranceDetailsBigCard = ({
   coverage,
   term,
   premium,
   index,
-  length,
-  onPress,
-  title,
+  item,
 }: props) => {
-  let arrayLength;
-  if (length !== undefined) {
-    arrayLength = length - 1;
-  }
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
-      onPress={onPress}
+      onPress={() =>
+        navigation.navigate('ProductDetailsScreen', {
+          item: item,
+        })
+      }
       style={[
         styles.container,
         Shadow.shadow,
-        index === arrayLength && styles.marginStyle,
+        index === 0 && styles.marginStyle,
       ]}>
       <View
         style={{
@@ -51,7 +50,9 @@ const InsuranceDetailsCard = ({
           //   paddingHorizontal: wp(2),
         }}>
         <InsuranceLogo style={{marginTop: hp(0.2)}} />
-        <Text style={{fontSize: FontSize.L, color: Colors.black}}>{title}</Text>
+        <Text style={{fontSize: FontSize.L, color: Colors.black, right: hp(2)}}>
+          {item?.title}
+        </Text>
         <TouchableOpacity>
           <Text style={{textDecorationLine: 'underline', color: Colors.black}}>
             Compare
@@ -61,10 +62,10 @@ const InsuranceDetailsCard = ({
       <View
         style={{
           height: hp(0.1),
-          width: wp(73),
+          width: wp(85),
           backgroundColor: Colors.black,
           alignSelf: 'center',
-          marginVertical: hp(1),
+          marginVertical: hp(1.5),
         }}
       />
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -94,8 +95,8 @@ const styles = StyleSheet.create({
     marginBottom: hp(1.5),
     backgroundColor: Colors.light4,
     minHeight: hp(15),
-    width: wp(80),
-    marginLeft: wp(5),
+    width: wp(90),
+    // marginLeft: wp(5),
     borderRadius: hp(0.8),
     paddingHorizontal: wp(3),
     paddingVertical: hp(1),
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     color: Colors.black,
   },
   marginStyle: {
-    marginRight: hp(2.5),
+    marginTop: hp(1.5),
   },
 });
-export default InsuranceDetailsCard;
+export default InsuranceDetailsBigCard;

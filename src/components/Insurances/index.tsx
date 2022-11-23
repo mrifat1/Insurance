@@ -13,6 +13,8 @@ import Travel from '@app/assets/images/Travel.svg';
 import Health from '@app/assets/images/Health.svg';
 import Cattle from '@app/assets/images/Cattle.svg';
 import Disability from '@app/assets/images/Disability.svg';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 type props = {
   title?: string;
@@ -21,8 +23,12 @@ type props = {
 
 const InsuranceList = ({title, data}: props) => {
   title = data?.title;
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
+      onPress={() => {
+        data?.value === 'life' && navigation.navigate('InsuranceScreen');
+      }}
       style={{
         marginVertical: hp(1),
         minHeight: hp(5),

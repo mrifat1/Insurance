@@ -27,6 +27,7 @@ type AppTextinputWithIconsProps = {
   isEditable?: boolean;
   iconSentStyle?: TextInputProps;
   rightIconName?: string;
+  color?: any;
 };
 
 const AppTextinputWithIcons = ({
@@ -37,6 +38,7 @@ const AppTextinputWithIcons = ({
   dataText,
   setText,
   isEditable = true,
+  color,
   ...Props
 }: AppTextinputWithIconsProps) => {
   return (
@@ -60,6 +62,8 @@ const AppTextinputWithIcons = ({
           value={dataText}
           {...Props}
           placeholder={placeholder}
+          keyboardType="numeric"
+          placeholderTextColor={color}
         />
       </View>
       {iconRight && <SearchIcon />}
@@ -71,7 +75,7 @@ const styles = StyleSheet.create({
   searchSection: {
     width: '100%',
     height: hp(6),
-    borderRadius: hp(1),
+    borderRadius: hp(0.5),
     // backgroundColor: Colors.light3,
     paddingHorizontal: hp(1),
     flexDirection: 'row',

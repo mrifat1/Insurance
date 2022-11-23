@@ -16,8 +16,10 @@ import {
 import FontSize from '@app/config/theme/FontSize';
 import InsuranceDetailsCard from '@app/components/InsuranceDetailsCard';
 import {insuranceData} from '../Data';
+import {useNavigation} from '@react-navigation/native';
 
 const InsuranceDetails = () => {
+  const navigation = useNavigation();
   return (
     <View style={[styles.container, Shadow.shadow]}>
       <View
@@ -50,6 +52,13 @@ const InsuranceDetails = () => {
         {insuranceData?.map((item, index) => {
           return (
             <InsuranceDetailsCard
+              onPress={() =>
+                navigation.navigate('ProductDetailsScreen', {
+                  item: item,
+                })
+              }
+              key={index}
+              title={item?.title}
               length={insuranceData?.length}
               index={index}
               coverage={item?.coverage}
