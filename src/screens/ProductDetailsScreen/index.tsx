@@ -272,6 +272,7 @@ const ProductDetailsScreen = ({
           justifyContent: 'space-between',
         }}>
         <AppButton
+          onPress={() => navigation.navigate('CompareScreen')}
           style={{
             width: wp(35),
             borderRadius: hp(1),

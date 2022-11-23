@@ -1,31 +1,17 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {
-  ActivityIndicator,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import AppButton from '@app/components/AppButton';
 import Colors from '@app/config/theme/Colors';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-// import DropDownPicker from 'react-native-dropdown-picker';
-// import {Picker} from '@react-native-picker/picker';
-import InsuranceList from '@app/components/InsuranceList';
-import ConsultationList from '@app/components/ConsultationList';
-import InsuranceDetails from '@app/components/InsuranceDetails';
 import FontSize from '@app/config/theme/FontSize';
 import {Picker} from '@react-native-picker/picker';
 import AppTextinputWithIcons from '@app/components/AppInput';
 import {bankData} from './data';
 import {useNavigation} from '@react-navigation/native';
-
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
 
 const CalculatePremiumScreen = ({
   route: {
@@ -35,14 +21,11 @@ const CalculatePremiumScreen = ({
   const [selectedBank, setSelectedBank] = useState();
   const [selectedPeriod, setSelectedPeriod] = useState();
   const [isPeriod, setIsPeriod] = useState(true);
-  const [navi, setNavi] = useState(false);
-  const [open, setOpen] = useState(false);
+  //   const [navi, setNavi] = useState(false);
+  //   const [open, setOpen] = useState(false);
   const [text, setText] = useState();
-  const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    {name: 'DBBL', value: 'apple'},
-    {label: 'Banana', value: 'banana'},
-  ]);
+  //   const [value, setValue] = useState(null);
+
   const navigation = useNavigation();
 
   //   console.log('Select', selectedBank);
@@ -50,7 +33,7 @@ const CalculatePremiumScreen = ({
   let premiumCal;
 
   function Calculation() {
-    setNavi(false);
+    // setNavi(false);
     if (
       selectedBank !== undefined &&
       selectedPeriod !== undefined &&
@@ -83,14 +66,11 @@ const CalculatePremiumScreen = ({
       }
     } else {
       setIsPeriod(false);
-      //   setNavi(false);
     }
   }
 
   const onSetText = month => {
     setText(month);
-    // setPhoneError(!validatePhone(phoneParam));
-    // setServerMessage('');
     if (month?.length > 0) {
       setIsPeriod(true);
     } else {
@@ -111,22 +91,6 @@ const CalculatePremiumScreen = ({
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate
         pellentesque ac dictum faucibus cursus diam.{' '}
       </Text>
-      {/* <DropDownPicker
-        open={open}
-        value={value}
-        items={items}
-        setOpen={setOpen}
-        setValue={setValue}
-        setItems={setItems}
-      />
-      <DropDownPicker
-        open={open}
-        value={value}
-        items={items}
-        setOpen={setOpen}
-        setValue={setValue}
-        setItems={setItems}
-      /> */}
 
       <View
         style={{
@@ -179,21 +143,6 @@ const CalculatePremiumScreen = ({
         style={{marginTop: hp(3)}}
         title={'Calculate Premium'}
       />
-      {/* {!navi ? (
-        <ActivityIndicator
-          size="small"
-          color={Colors.light4}
-          style={{marginRight: 8}}
-        />
-      ) : (
-        <AppButton
-          onPress={() => {
-            navigation.navigate('PremiumAmountScreen');
-          }}
-          style={{marginTop: hp(3)}}
-          title={'Calculate Premium'}
-        />
-      )} */}
       {!isPeriod ? (
         <Text style={{marginTop: hp(1), color: Colors.red0}}>
           Please fill up Bank,Period & Advance payment properly{' '}

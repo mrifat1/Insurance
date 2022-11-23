@@ -9,6 +9,7 @@ import {
   ProductDetailsScreen,
   CalculatePremiumScreen,
   PremiumAmountScreen,
+  CompareScreen,
 } from '@app/screens';
 import {
   heightPercentageToDP as hp,
@@ -216,6 +217,20 @@ function RootNavigator() {
       <Stack.Screen
         name="PremiumAmountScreen"
         component={PremiumAmountScreen}
+        options={{
+          // title: 'Insurance List',
+          header: props => (
+            <GenericAppBar
+              title="Calculate Premium"
+              isSearchBar={false}
+              {...props}
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="CompareScreen"
+        component={CompareScreen}
         options={{
           // title: 'Insurance List',
           header: props => (

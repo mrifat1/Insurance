@@ -2,7 +2,7 @@ export let insuranceData = [
   {
     name: 'Life Insurance',
     title: 'Shanti-Amra Sobai',
-    coverage: 9000,
+    coverage: 100000,
     term: 5,
     Premium: 540,
     paymentMethod: 'Monthly',

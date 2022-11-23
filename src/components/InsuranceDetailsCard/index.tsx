@@ -10,6 +10,7 @@ import {
 import FontSize from '@app/config/theme/FontSize';
 import InsuranceLogo from '@app/assets/images/InsuranceLogo.svg';
 import Basket from '@app/assets/images/Basket.svg';
+import {useNavigation} from '@react-navigation/native';
 
 type props = {
   coverage?: number;
@@ -34,6 +35,7 @@ const InsuranceDetailsCard = ({
   if (length !== undefined) {
     arrayLength = length - 1;
   }
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -52,7 +54,7 @@ const InsuranceDetailsCard = ({
         }}>
         <InsuranceLogo style={{marginTop: hp(0.2)}} />
         <Text style={{fontSize: FontSize.L, color: Colors.black}}>{title}</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('CompareScreen')}>
           <Text style={{textDecorationLine: 'underline', color: Colors.black}}>
             Compare
           </Text>
