@@ -14,7 +14,7 @@ import Health from '@app/assets/images/Health.svg';
 import Cattle from '@app/assets/images/Cattle.svg';
 import Disability from '@app/assets/images/Disability.svg';
 import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
+// import {StackNavigationProp} from '@react-navigation/stack';
 
 type props = {
   title?: string;

@@ -60,39 +60,6 @@ const styles = StyleSheet.create({
     borderRadius: hp(0.5),
     backgroundColor: Colors.primaryMain,
   },
-  // customHomeButton: {
-  //   // justifyContent: 'space-around',
-  //   alignItems: 'center',
-  //   width: wp(44),
-  //   height: hp(6),
-  //   borderRadius: hp(1),
-  //   backgroundColor: Colors.light4,
-  // },
-  // loginRegisterButtonProceed: {
-  //   flexDirection: 'row',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   width: wp(90),
-  //   height: hp(6),
-  //   borderRadius: hp(4),
-  // },
-  // circleButtonProceed: {
-  //   height: hp(7.5),
-  //   width: hp(7.5),
-  //   backgroundColor: Colors.primaryPurple,
-  //   borderRadius: hp(4),
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   position: 'absolute',
-  // },
-  // textChildrenStyling: {
-  //   color: Colors.light4,
-  //   fontFamily: FontFamily.InnerR,
-  //   fontSize: FontSize.M,
-  // },
-  // iconStyling: {
-  //   left: hp(2),
-  // },
 });
 
 export default AppButton;

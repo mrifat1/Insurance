@@ -14,9 +14,6 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import InsuranceList from '@app/components/InsuranceList';
-import ConsultationList from '@app/components/ConsultationList';
-import InsuranceDetails from '@app/components/InsuranceDetails';
 import FontSize from '@app/config/theme/FontSize';
 import {Shadow} from '@app/config/theme/shadow';
 import Check from '@app/assets/images/Check.svg';

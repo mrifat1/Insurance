@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import AppButton from '@app/components/AppButton';
@@ -17,9 +9,6 @@ import {
 import InsuranceList from '@app/components/InsuranceList';
 import ConsultationList from '@app/components/ConsultationList';
 import InsuranceDetails from '@app/components/InsuranceDetails';
-
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
 
 const HomeScreen = () => {
   return (

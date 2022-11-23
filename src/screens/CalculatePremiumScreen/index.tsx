@@ -21,15 +21,10 @@ const CalculatePremiumScreen = ({
   const [selectedBank, setSelectedBank] = useState();
   const [selectedPeriod, setSelectedPeriod] = useState();
   const [isPeriod, setIsPeriod] = useState(true);
-  //   const [navi, setNavi] = useState(false);
-  //   const [open, setOpen] = useState(false);
   const [text, setText] = useState();
-  //   const [value, setValue] = useState(null);
 
   const navigation = useNavigation();
 
-  //   console.log('Select', selectedBank);
-  //   console.log('hello', text);
   let premiumCal;
 
   function Calculation() {
